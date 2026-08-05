@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Offices of Michael Goains | Strategic Legal Defense</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-panel: #111111;
+            --text-main: #E0E0E0;
+            --accent: #900000;
+            --accent-hover: #C00000;
+            --white: #FFFFFF;
+            --border: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            background-color: var(--bg-dark);
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            /* Adjusted gradient for lower opacity so the background photo is more visible */
+            background: linear-gradient(rgba(5, 5, 5, 0.45), rgba(5, 5, 5, 0.70)), url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=1920&auto=format&fit=crop&sat=-100') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+            max-width: 900px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            /* Brighter red to make the name pop without being overwhelmingly neon */
+            color: #C8102E; 
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            color: #EEEEEE;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            padding: 18px 40px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 15px rgba(144, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(192, 0, 0, 0.5);
+        }
+
+        /* Generic Section */
+        .section {
+            padding: 100px 5%;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+        
+        .about-text .highlight {
+            color: var(--accent);
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: #AAAAAA;
+        }
+
+        .highlight-box {
+            background-color: var(--bg-panel);
+            padding: 50px;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
+        }
+
+        .highlight-box h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+        }
+
+        .highlight-box li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            color: #BBBBBB;
+            font-weight: 700;
+        }
+
+        .highlight-box li::before {
+            content: '>';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        /* Practice Areas */
+        .bg-alt {
+            background-color: #0A0A0A;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h3 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .section-header .divider {
+            height: 4px;
+            width: 80px;
+            background-color: var(--accent);
+            margin: 20px auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--bg-panel);
+            padding: 40px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            background-color: #151515;
+        }
+
+        .service-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            color: #999999;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+        }
+
+        .contact-info {
+            padding: 60px;
+            border-right: 1px solid var(--border);
+        }
+
+        .contact-info h4 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item h5 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .contact-item p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .contact-form {
+            padding: 60px;
+            background-color: #080808;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border);
+            color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 18px 30px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #555555;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GOAINS<span>LAW</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">The Attorney</a></li>
+            <li><a href="#practice-areas">Practice Areas</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h2>MICHAEL D. GOAINS</h2>
+        <h1>EXPERIENCED ADVOCACY.<br>STRATEGIC PRECISION.</h1>
+        <p>Nearly 30 years of dedicated legal practice, informed by the discipline, focus, and rigorous planning of a military intelligence background.</p>
+        <a href="#contact" class="btn">Request a Consultation</a>
+    </header>
+
+    <section id="about" class="section">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>MILITARY VETERAN.<br><span class="highlight">DEDICATED ADVOCATE.</span></h3>
+                <p>Licensed to practice law in Texas since 1995, Michael Goains brings decades of hard-earned experience to his clients. His legal practice is defined by the discipline, analytical rigor, and strategic planning honed during his time in military intelligence and command.</p>
+                <p>Whether thoroughly defending a client in criminal court, executing complex appellate maneuvers, or resolving highly contested family and guardianship disputes, Goains operates with a singular objective: securing the best possible outcome for his client.</p>
+                <p style="color: var(--white); font-weight: 700; margin-top: 30px;">[ HABLAMOS ESPAÑOL ]</p>
+            </div>
+            <div class="highlight-box">
+                <h4>MILITARY & LEGAL BACKGROUND</h4>
+                <ul>
+                    <li>BAYLOR UNIVERSITY SCHOOL OF LAW (1995)</li>
+                    <li>FORMER BATTALION COMMANDER, 102ND INFORMATION OPERATIONS (IRAQ)</li>
+                    <li>SUPERVISORY INTELLIGENCE ANALYST (HTS-IRAQ)</li>
+                    <li>JIEDDO PROGRAM MANAGER & STRATEGIC PLANNER</li>
+                    <li>11+ YEARS IN DOD CONTRACTING MANAGEMENT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="practice-areas" class="section bg-alt">
+        <div class="section-header">
+            <h3>PRACTICE AREAS</h3>
+            <div class="divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>CRIMINAL DEFENSE</h4>
+                <p>Dedicated, uncompromising defense against misdemeanor and felony charges. We meticulously review the prosecution's case to protect your rights and your freedom.</p>
+            </div>
+            <div class="service-card">
+                <h4>APPELLATE LAW</h4>
+                <p>Thorough review and representation in both Civil and Criminal appeals. Identifying and leveraging procedural errors to pursue just and fair rulings.</p>
+            </div>
+            <div class="service-card">
+                <h4>FAMILY LAW & GUARDIANSHIP</h4>
+                <p>Firm, strategic representation in complex family disputes. Court-approved for Ad Litem and Guardianship appointments across the state of Texas.</p>
+            </div>
+            <div class="service-card">
+                <h4>WILLS, TRUSTS & PROBATE</h4>
+                <p>Comprehensive estate planning and proper probate administration to secure your assets and protect your family's long-term financial security.</p>
+            </div>
+            <div class="service-card">
+                <h4>CREDITOR-DEBTOR LAW</h4>
+                <p>Strategic guidance in consumer law, financial disputes, and debt litigation. We cut through the confusion to successfully enforce your rights.</p>
+            </div>
+            <div class="service-card">
+                <h4>IMMIGRATION LAW</h4>
+                <p>Direct, bilingual advocacy in immigration proceedings, utilizing decades of extensive legal experience to navigate a highly complex system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-header">
+            <h3>CONTACT THE FIRM</h3>
+            <div class="divider"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h4>GOAINS LAW</h4>
+                <div class="contact-item">
+                    <h5>MAILING ADDRESS</h5>
+                    <p>PO Box 591340<br>San Antonio, TX 78259-0116</p>
+                </div>
+                <div class="contact-item">
+                    <h5>PHONE & FAX</h5>
+                    <p>Direct: (210) 577-5558</p>
+                    <p>Office: (830) 714-7723</p>
+                    <p>Fax: (830) 714-7724</p>
+                </div>
+                <div class="contact-item">
+                    <h5>EMAIL</h5>
+                    <p>michael@goainslaw.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="FULL NAME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="EMAIL ADDRESS" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="PHONE NUMBER">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="BRIEFLY DESCRIBE YOUR LEGAL ISSUE..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Law Offices of Michael Goains. All Rights Reserved. | Not certified by the Texas Board of Legal Specialization unless otherwise noted.</p>
+    </footer>
+
+</body>
+</html>
